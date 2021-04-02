@@ -11,6 +11,6 @@ public class Vehicle {
     }
 
     public String getLicensePlate() {
-        return "";
+        return this.licensePlate;
     }
 }
