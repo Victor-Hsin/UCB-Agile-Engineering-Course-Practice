@@ -13,4 +13,8 @@ public class Vehicle {
     public String getLicensePlate() {
         return this.licensePlate;
     }
+
+    public VehicleType getVehicleType() {
+        return VehicleType.LARGE;
+    }
 }
