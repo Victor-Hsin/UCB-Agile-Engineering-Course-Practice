@@ -15,6 +15,6 @@ public class Vehicle {
     }
 
     public VehicleType getVehicleType() {
-        return VehicleType.LARGE;
+        return this.vehicleType;
     }
 }
