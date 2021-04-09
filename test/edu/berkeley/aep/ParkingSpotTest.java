@@ -9,4 +9,11 @@ public class ParkingSpotTest {
         ParkingSpot newParkingSpot = new ParkingSpot("F1-1", VehicleType.MOTORCYCLE);
         assertEquals(true, newParkingSpot.isAvailable());
     }
+
+    @Test
+    public void addALargeVehicleToAmEmptyLargeParkingSpotShouldReturnTrue() {
+        Vehicle largeVehicle = new Vehicle("7AAA777", VehicleType.LARGE);
+        ParkingSpot largeParkingSlot = new ParkingSpot("F1-1", VehicleType.LARGE);
+        assertEquals(true, largeParkingSlot.addVehicle(largeVehicle));
+    }
 }
