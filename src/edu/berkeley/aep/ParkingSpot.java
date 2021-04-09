@@ -18,6 +18,11 @@ public class ParkingSpot {
     }
 
     public boolean addVehicle(Vehicle vehicle) {
-        return false;
+        if (this.isOccupied || this.parkingSpotType != vehicle.getVehicleType()) {
+            return false;
+        }
+        parkedVehicle = vehicle;
+        isOccupied = true;
+        return true;
     }
 }
