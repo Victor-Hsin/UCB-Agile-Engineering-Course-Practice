@@ -14,7 +14,7 @@ public class ParkingSpot {
     }
 
     public boolean isAvailable() {
-        return false;
+        return !this.isOccupied;
     }
 
     public boolean addVehicle(Vehicle vehicle) {
