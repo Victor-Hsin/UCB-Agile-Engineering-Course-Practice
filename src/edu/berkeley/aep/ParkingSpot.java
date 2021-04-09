@@ -21,12 +21,17 @@ public class ParkingSpot {
         if (this.isOccupied || this.parkingSpotType != vehicle.getVehicleType()) {
             return false;
         }
-        parkedVehicle = vehicle;
-        isOccupied = true;
+        this.parkedVehicle = vehicle;
+        this.isOccupied = true;
         return true;
     }
 
     public boolean removeVehicle() {
-        return false;
+        if (!this.isOccupied) {
+            return false;
+        }
+        this.isOccupied = false;
+        this.parkedVehicle = null;
+        return true;
     }
 }
