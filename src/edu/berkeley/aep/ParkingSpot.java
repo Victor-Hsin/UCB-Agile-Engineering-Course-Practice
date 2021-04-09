@@ -25,4 +25,8 @@ public class ParkingSpot {
         isOccupied = true;
         return true;
     }
+
+    public boolean removeVehicle() {
+        return false;
+    }
 }
