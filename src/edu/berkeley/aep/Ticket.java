@@ -12,6 +12,7 @@ public class Ticket {
     }
 
     public double calculateParkingFee() {
-        return 0;
+        long endTime = System.currentTimeMillis();
+        return (endTime - startTime) / 1000.0 * this.parkingRatePerSec;
     }
 }
