@@ -1,0 +1,31 @@
+package edu.berkeley.aep;
+
+import java.util.ArrayList;
+
+// understands how to find the available parking slots in this floor
+public class ParkingFloor {
+    private String parkingFloorName;
+    private ArrayList<ParkingSpot> motorcycleParkingSpots = new ArrayList<ParkingSpot>();
+    private ArrayList<ParkingSpot> compactParkingSpots = new ArrayList<ParkingSpot>();
+    private ArrayList<ParkingSpot> largeParkingSpots = new ArrayList<ParkingSpot>();
+
+    public ParkingFloor(String parkingFloorName, int numberOfParkingSpotsForMotorcycle, int numberOfParkingSpotsForCompactVehicle, int numberOfParkingSpotsForLargeVehicle) {
+        this.parkingFloorName = parkingFloorName;
+
+        for (int i=0; i<numberOfParkingSpotsForMotorcycle; i++) {
+            parkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.MOTORCYCLE));
+        }
+
+        for (int i=numberOfParkingSpotsForMotorcycle; i<numberOfParkingSpotsForCompactVehicle; i++) {
+            parkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.COMPACT));
+        }
+
+        for (int i=numberOfParkingSpotsForCompactVehicle; i<numberOfParkingSpotsForLargeVehicle; i++) {
+            parkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.LARGE));
+        }
+     }
+
+     public ParkingSpot findAvailableParkingSlot(VehicleType vehicleType) {
+        return null;
+     }
+}
