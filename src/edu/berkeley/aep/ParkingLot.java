@@ -27,4 +27,8 @@ public class ParkingLot {
         }
         return null;
     }
+
+    public double exitAndCalculateTheParkingFee(Ticket ticket) {
+        return 0.0;
+    }
 }

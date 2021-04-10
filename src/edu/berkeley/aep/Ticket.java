@@ -15,4 +15,8 @@ public class Ticket {
         long endTime = System.currentTimeMillis();
         return (endTime - startTime) / 1000.0 * this.parkingRatePerSec;
     }
+
+    public ParkingSpot getParkingSpot() {
+        return this.parkingSpot;
+    }
 }

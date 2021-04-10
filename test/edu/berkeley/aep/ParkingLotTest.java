@@ -2,7 +2,7 @@ package edu.berkeley.aep;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class ParkingLotTest {
     static ParkingLot parkingLotA = new ParkingLot("A");
@@ -16,5 +16,20 @@ public class ParkingLotTest {
     @Test
     public void provideATicketAndParkTheVehicle() {
         assertNotNull(parkingLotA.provideATicketAndParkTheVehicle(largeVehicle));
+    }
+
+    @Test
+    public void theParkingFeeShouldNotBeZeroForAnExitingVehicle() {
+        Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
+        double parkingFee = parkingLotA.exitAndCalculateTheParkingFee(ticket);
+        assertNotEquals(0.0, parkingFee);
+    }
+
+    @Test
+    public void whenAVehicleLeavesTheOriginalParkingSlotShouldBecomeAvailable() {
+        Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
+        double parkingFee = parkingLotA.exitAndCalculateTheParkingFee(ticket);
+        ParkingSpot parkingSpot = ticket.getParkingSpot();
+        assertTrue(parkingSpot.isAvailable());
     }
 }
