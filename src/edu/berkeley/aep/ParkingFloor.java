@@ -13,15 +13,15 @@ public class ParkingFloor {
         this.parkingFloorName = parkingFloorName;
 
         for (int i=0; i<numberOfParkingSpotsForMotorcycle; i++) {
-            parkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.MOTORCYCLE));
+            motorcycleParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.MOTORCYCLE));
         }
 
         for (int i=numberOfParkingSpotsForMotorcycle; i<numberOfParkingSpotsForCompactVehicle; i++) {
-            parkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.COMPACT));
+            compactParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.COMPACT));
         }
 
         for (int i=numberOfParkingSpotsForCompactVehicle; i<numberOfParkingSpotsForLargeVehicle; i++) {
-            parkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.LARGE));
+            largeParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.LARGE));
         }
      }
 
