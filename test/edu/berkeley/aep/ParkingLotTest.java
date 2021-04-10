@@ -19,13 +19,6 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void theParkingFeeShouldNotBeZeroForAnExitingVehicle() {
-        Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
-        double parkingFee = parkingLotA.exitAndCalculateTheParkingFee(ticket);
-        assertNotEquals(0.0, parkingFee);
-    }
-
-    @Test
     public void whenAVehicleLeavesTheOriginalParkingSlotShouldBecomeAvailable() {
         Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
         double parkingFee = parkingLotA.exitAndCalculateTheParkingFee(ticket);
