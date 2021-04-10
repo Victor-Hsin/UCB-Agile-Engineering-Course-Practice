@@ -1,13 +1,14 @@
 package edu.berkeley.aep;
 
 import java.util.ArrayList;
+import java.util.List;
 
 // understands how to find the available parking slots in this floor
 public class ParkingFloor {
     private String parkingFloorName;
-    private ArrayList<ParkingSpot> motorcycleParkingSpots = new ArrayList<ParkingSpot>();
-    private ArrayList<ParkingSpot> compactParkingSpots = new ArrayList<ParkingSpot>();
-    private ArrayList<ParkingSpot> largeParkingSpots = new ArrayList<ParkingSpot>();
+    private List<ParkingSpot> motorcycleParkingSpots = new ArrayList<ParkingSpot>();
+    private List<ParkingSpot> compactParkingSpots = new ArrayList<ParkingSpot>();
+    private List<ParkingSpot> largeParkingSpots = new ArrayList<ParkingSpot>();
 
     public ParkingFloor(String parkingFloorName, int numberOfMotorcycleParkingSpots, int numberOfCompactParkingSpots, int numberOfLargeParkingSpots) {
         this.parkingFloorName = parkingFloorName;
@@ -30,7 +31,7 @@ public class ParkingFloor {
      }
 
      public ParkingSpot findAvailableParkingSlot(VehicleType vehicleType) {
-        ArrayList<ParkingSpot> parkingSpots;
+        List<ParkingSpot> parkingSpots;
         if (vehicleType == VehicleType.MOTORCYCLE) {
             parkingSpots = motorcycleParkingSpots;
         } else if (vehicleType == VehicleType.COMPACT) {
