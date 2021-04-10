@@ -9,19 +9,23 @@ public class ParkingFloor {
     private ArrayList<ParkingSpot> compactParkingSpots = new ArrayList<ParkingSpot>();
     private ArrayList<ParkingSpot> largeParkingSpots = new ArrayList<ParkingSpot>();
 
-    public ParkingFloor(String parkingFloorName, int numberOfParkingSpotsForMotorcycle, int numberOfParkingSpotsForCompactVehicle, int numberOfParkingSpotsForLargeVehicle) {
+    public ParkingFloor(String parkingFloorName, int numberOfMotorcycleParkingSpots, int numberOfCompactParkingSpots, int numberOfLargeParkingSpots) {
         this.parkingFloorName = parkingFloorName;
+        int parkingLotCount = 0;
 
-        for (int i=0; i<numberOfParkingSpotsForMotorcycle; i++) {
-            motorcycleParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.MOTORCYCLE));
+        for (int i=0; i<numberOfMotorcycleParkingSpots; i++) {
+            parkingLotCount += 1;
+            motorcycleParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(parkingLotCount), VehicleType.MOTORCYCLE));
         }
 
-        for (int i=numberOfParkingSpotsForMotorcycle; i<numberOfParkingSpotsForCompactVehicle; i++) {
-            compactParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.COMPACT));
+        for (int i=0; i<numberOfCompactParkingSpots; i++) {
+            parkingLotCount += 1;
+            compactParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(parkingLotCount), VehicleType.COMPACT));
         }
 
-        for (int i=numberOfParkingSpotsForCompactVehicle; i<numberOfParkingSpotsForLargeVehicle; i++) {
-            largeParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(i), VehicleType.LARGE));
+        for (int i=0; i<numberOfLargeParkingSpots; i++) {
+            parkingLotCount += 1;
+            largeParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(parkingLotCount), VehicleType.LARGE));
         }
      }
 
