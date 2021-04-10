@@ -26,6 +26,20 @@ public class ParkingFloor {
      }
 
      public ParkingSpot findAvailableParkingSlot(VehicleType vehicleType) {
+        ArrayList<ParkingSpot> parkingSpots;
+        if (vehicleType == VehicleType.MOTORCYCLE) {
+            parkingSpots = motorcycleParkingSpots;
+        } else if (vehicleType == VehicleType.COMPACT) {
+            parkingSpots = compactParkingSpots;
+        } else {
+            parkingSpots = largeParkingSpots;
+        }
+
+        for (ParkingSpot parkingSpot: parkingSpots) {
+            if (parkingSpot.isAvailable()) {
+                return parkingSpot;
+            }
+        }
         return null;
      }
 }
