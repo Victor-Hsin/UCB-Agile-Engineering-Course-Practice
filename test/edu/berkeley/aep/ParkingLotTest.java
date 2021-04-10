@@ -2,6 +2,8 @@ package edu.berkeley.aep;
 
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.*;
 
 public class ParkingLotTest {
@@ -16,6 +18,19 @@ public class ParkingLotTest {
     @Test
     public void provideATicketAndParkTheVehicle() {
         assertNotNull(parkingLotA.provideATicketAndParkTheVehicle(largeVehicle));
+    }
+
+    @Test
+    public void theParkingFeeShouldNotBeZeroForAnExitingVehicle() {
+        Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        }
+        catch(InterruptedException ex){
+            Thread.currentThread().interrupt();
+        }
+        double parkingFee = parkingLotA.exitAndCalculateTheParkingFee(ticket);
+        assertNotEquals(0.0, parkingFee);
     }
 
     @Test
