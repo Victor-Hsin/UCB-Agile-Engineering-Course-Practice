@@ -16,7 +16,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void parkAVehicleAtAnParkingLotWithAvailableSpotsShouldReturnATicket() {
+    public void parkAVehicleAtAnParkingLotWithAvailableSpotsShouldNotReturnNone() {
         assertNotNull(parkingLotA.provideATicketAndParkTheVehicle(largeVehicle));
     }
 
