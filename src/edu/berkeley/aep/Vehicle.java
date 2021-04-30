@@ -10,10 +10,6 @@ public class Vehicle {
         this.vehicleType = vehicleType;
     }
 
-    public String getLicensePlate() {
-        return this.licensePlate;
-    }
-
     public boolean vehicleTypeEquals(VehicleType vehicleType) {
         if (vehicleType == this.vehicleType) {
             return true;
