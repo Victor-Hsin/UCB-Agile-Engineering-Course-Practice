@@ -16,7 +16,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void provideATicketAndParkTheVehicle() {
+    public void parkAVehicleAtAnParkingLotWithAvailableSpotsShouldReturnATicket() {
         assertNotNull(parkingLotA.provideATicketAndParkTheVehicle(largeVehicle));
     }
 
@@ -33,11 +33,10 @@ public class ParkingLotTest {
         assertNotEquals(0.0, parkingFee);
     }
 
-    @Test
-    public void whenAVehicleLeavesTheOriginalParkingSlotShouldBecomeAvailable() {
-        Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
-        double parkingFee = parkingLotA.exitAndCalculateTheParkingFee(ticket);
-        ParkingSpot parkingSpot = ticket.getParkingSpot();
-        assertTrue(parkingSpot.isAvailable());
-    }
+//    @Test
+//    public void whenAVehicleLeavesTheOriginalParkingSlotShouldBecomeAvailable() {
+//        Ticket ticket = parkingLotA.provideATicketAndParkTheVehicle(largeVehicle);
+//        ParkingSpot parkingSpot = ticket.getParkingSpot();
+//        assertTrue(parkingSpot.isAvailable());
+//    }
 }

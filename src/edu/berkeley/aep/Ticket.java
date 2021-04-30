@@ -16,7 +16,7 @@ public class Ticket {
         return (endTime - startTime) / 1000.0 * this.parkingRatePerSec;
     }
 
-    public ParkingSpot getParkingSpot() {
-        return this.parkingSpot;
+    public void exit() {
+        this.parkingSpot.removeVehicle();
     }
 }

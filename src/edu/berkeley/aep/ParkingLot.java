@@ -29,9 +29,7 @@ public class ParkingLot {
     }
 
     public double exitAndCalculateTheParkingFee(Ticket ticket) {
-        ParkingSpot parkingSpot = ticket.getParkingSpot();
-        parkingSpot.removeVehicle();
-        double parkingFee = ticket.calculateParkingFee();
-        return parkingFee;
+        ticket.exit();
+        return ticket.calculateParkingFee();
     }
 }

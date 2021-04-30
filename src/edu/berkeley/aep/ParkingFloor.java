@@ -18,12 +18,10 @@ public class ParkingFloor {
             parkingLotCount += 1;
             motorcycleParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(parkingLotCount), VehicleType.MOTORCYCLE));
         }
-
         for (int i=0; i<numberOfCompactParkingSpots; i++) {
             parkingLotCount += 1;
             compactParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(parkingLotCount), VehicleType.COMPACT));
         }
-
         for (int i=0; i<numberOfLargeParkingSpots; i++) {
             parkingLotCount += 1;
             largeParkingSpots.add(new ParkingSpot(parkingFloorName + Integer.toString(parkingLotCount), VehicleType.LARGE));
