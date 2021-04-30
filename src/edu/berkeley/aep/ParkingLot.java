@@ -18,7 +18,7 @@ public class ParkingLot {
 
     public Ticket provideATicketAndParkTheVehicle(Vehicle vehicle) {
         for (ParkingFloor parkingFloor: parkingFloors) {
-            ParkingSpot parkingSpot = parkingFloor.findAvailableParkingSlot(vehicle.getVehicleType());
+            ParkingSpot parkingSpot = parkingFloor.findAvailableParkingSlot(vehicle);
             if (parkingSpot != null) {
                 Ticket ticket = new Ticket(parkingSpot);
                 parkingSpot.addVehicle(vehicle);

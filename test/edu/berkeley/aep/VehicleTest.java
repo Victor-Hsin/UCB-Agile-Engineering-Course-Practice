@@ -13,6 +13,6 @@ public class VehicleTest {
     @Test
     public void theVehicleTypeOfACompactVehicleShouldEqualToCompact() {
         Vehicle vehicle = new Vehicle("7AAA777", VehicleType.COMPACT);
-        assertEquals(VehicleType.COMPACT, vehicle.getVehicleType());
+        assertEquals(true, vehicle.vehicleTypeEquals(VehicleType.COMPACT));
     }
 }

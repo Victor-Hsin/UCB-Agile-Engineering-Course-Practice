@@ -8,6 +8,7 @@ public class ParkingFloorTest {
     @Test
     public void findACompactParkingSlotInAnParkingFloorWithAvailableSlotShouldNotReturnNull(){
         ParkingFloor parkingFloor = new ParkingFloor("F1", 10, 10, 10);
-        assertNotNull(parkingFloor.findAvailableParkingSlot(VehicleType.COMPACT));
+        Vehicle vehicle = new Vehicle("7AAA777", VehicleType.COMPACT);
+        assertNotNull(parkingFloor.findAvailableParkingSlot(vehicle));
     }
 }

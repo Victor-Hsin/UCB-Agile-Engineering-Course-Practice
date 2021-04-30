@@ -14,7 +14,10 @@ public class Vehicle {
         return this.licensePlate;
     }
 
-    public VehicleType getVehicleType() {
-        return this.vehicleType;
+    public boolean vehicleTypeEquals(VehicleType vehicleType) {
+        if (vehicleType == this.vehicleType) {
+            return true;
+        }
+        return false;
     }
 }

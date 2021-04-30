@@ -30,11 +30,11 @@ public class ParkingFloor {
         }
      }
 
-     public ParkingSpot findAvailableParkingSlot(VehicleType vehicleType) {
+    public ParkingSpot findAvailableParkingSlot(Vehicle vehicle) {
         List<ParkingSpot> parkingSpots;
-        if (vehicleType == VehicleType.MOTORCYCLE) {
+        if (vehicle.vehicleTypeEquals(VehicleType.MOTORCYCLE)) {
             parkingSpots = motorcycleParkingSpots;
-        } else if (vehicleType == VehicleType.COMPACT) {
+        } else if (vehicle.vehicleTypeEquals(VehicleType.COMPACT)) {
             parkingSpots = compactParkingSpots;
         } else {
             parkingSpots = largeParkingSpots;
@@ -46,5 +46,5 @@ public class ParkingFloor {
             }
         }
         return null;
-     }
+    }
 }
